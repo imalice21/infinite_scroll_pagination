@@ -110,6 +110,10 @@ class PagingController<PageKeyType, ItemType>
     );
   }
 
+  /// insert [newItem] list at [index] in the previously loaded list.
+  void insertItemAt(int index, ItemType newItem) =>
+      appendPage([newItem], nextPageKey);
+
   /// Appends [newItems] to the previously loaded ones and sets the next page
   /// key to `null`.
   void appendLastPage(List<ItemType> newItems) => appendPage(newItems, null);
